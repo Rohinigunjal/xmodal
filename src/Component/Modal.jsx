@@ -19,7 +19,7 @@ const Modal = ({ onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { username, email, phone, dob } = formData;
+    const { email, phone, dob } = formData;
 
         if (email && !email.includes('@')) {
       alert('Invalid email');
@@ -47,7 +47,6 @@ const Modal = ({ onClose }) => {
       return;
     }
 
-    // If all validations pass, close modal
     onClose();
   };
 
@@ -60,7 +59,7 @@ const Modal = ({ onClose }) => {
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  }, );
 
   return (
     <div className="modal">
